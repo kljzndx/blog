@@ -32,7 +32,7 @@ async function loadFiles(dir: string, srcDir: string = "src/") {
             continue;
 
         const fileName = fn.slice(0, fn.lastIndexOf('.'));
-        const url = "/" + dir + fileName;
+        const url = "/" + dir + (fileName === "index" ? "" : fileName);
         let title: string | null = null;
 
         if (true) {
