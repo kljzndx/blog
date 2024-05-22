@@ -1,10 +1,53 @@
 import fs from "node:fs/promises"
+import path from "node:path"
 
 interface menu {
     text: string
     collapsed: boolean
     link?: string
     items?: menu[]
+}
+
+interface Article {
+    url: string
+    fileName: string
+    title: string | null
+}
+
+async function loadFiles(dir: string, srcDir: string = "src/") {
+    dir = dir.replace("/", "") + "/";
+    srcDir = srcDir.replace("/", "") + "/";
+
+    const dirPath = srcDir + dir;
+    const files = await fs.readdir(dirPath);
+    const result: Article[] = [];
+
+    for (const fn of files) {
+        if (fn.slice(fn.lastIndexOf('.') + 1) != "md")
+            continue;
+
+        const fileName = fn.slice(0, fn.lastIndexOf('.'));
+        const url = "/" + dir + fileName;
+        let title: string | null = null;
+
+        if (true) {
+            const content = await fs.readFile(path.resolve(srcDir + dir + fn), "utf-8");
+            const ymlStart = content.indexOf("---\n") + 4;
+            const ymlEnd = content.indexOf("---", ymlStart + 1);
+
+            let titleStart = content.indexOf("title: ", ymlStart) + 7;
+            if (titleStart == -1 + 7 || titleStart <= ymlStart || titleStart >= ymlEnd)
+                titleStart = content.indexOf("# ") + 2;
+            const titleEnd = content.indexOf("\n", titleStart);
+
+            if (titleStart != -1 + 2)
+                title = content.slice(titleStart, titleEnd == -1 ? undefined : titleEnd).trim();
+        }
+
+        result.push({ url, fileName, title });
+    }
+
+    return result;
 }
 
 async function loadAsDateTree(dir: string) {
@@ -16,23 +59,15 @@ async function loadAsDateTree(dir: string) {
     let yearObj: menu = { text: '', collapsed: true };
     let mouthObj: menu = { text: '', collapsed: true };
 
-    const files =  await fs.readdir(dir);
+    const acs = await loadFiles(dir);
 
-    for (const path of files) {
-        if (path.slice(path.lastIndexOf('.') + 1) != "md")
-            continue;
-
-        let fnId = path.lastIndexOf('\\');
-        if (fnId == -1)
-            fnId = path.lastIndexOf('/');
-
-        const fileName = path.slice(fnId + 1, path.lastIndexOf('.'));
-        if (fileName == "index") {
-            result.unshift({ text: "首页", collapsed: false, link: "/tech/" });
+    for (const ac of acs) {
+        if (!ac.fileName.match(/\d{4}\-\d{2}\-\d{2}\-.+/)) {
+            result.unshift({ text: ac.title ?? ac.fileName, collapsed: false, link: ac.url });
             continue;
         }
 
-        const members = fileName.split('-');
+        const members = ac.fileName.split('-');
 
         const year = members[0];
         const mouth = members[1];
@@ -62,24 +97,10 @@ async function loadAsDateTree(dir: string) {
             yearObj.items?.push(mouthObj);
         }
 
-        const content = await fs.readFile(dir + path, "utf-8");
-
-        const ymlStart = content.indexOf("---\n") + 4;
-        const ymlEnd = content.indexOf("---", ymlStart + 1);
-        let titleStart = content.indexOf("title: ", ymlStart) + 7;
-        if (titleStart == -1 + 7 || titleStart < ymlStart || titleStart >= ymlEnd)
-            titleStart = content.indexOf("# ") + 2;
-
-        const titleEnd = content.indexOf("\n", titleStart);
-
-        const title = titleStart == -1 + 2
-            ? members[3]
-            : content.slice(titleStart, titleEnd == -1 ? undefined : titleEnd);
-
         mouthObj.items?.push({
-            text: title,
+            text: ac.title ?? members[3],
             collapsed: true,
-            link: "/tech/" + fileName
+            link: ac.url
         });
     }
 

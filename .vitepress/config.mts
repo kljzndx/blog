@@ -2,8 +2,6 @@ import { defineConfig } from 'vitepress'
 import sidebarLoader from "./sidebarLoader"
 
 async function setup(){
-  const tech = await sidebarLoader.loadAsDateTree("src/tech/");
-
   return defineConfig({
     srcDir: "src/",
     title: "My Awesome Project",
@@ -16,7 +14,7 @@ async function setup(){
       ],
   
       sidebar: {
-        "/tech/": tech
+        "/tech/": await sidebarLoader.loadAsDateTree("/tech/")
       },
   
       socialLinks: [
