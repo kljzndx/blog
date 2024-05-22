@@ -15,8 +15,13 @@ interface Article {
 }
 
 async function loadFiles(dir: string, srcDir: string = "src/") {
-    dir = dir.replace("/", "") + "/";
-    srcDir = srcDir.replace("/", "") + "/";
+    while (dir.indexOf("/") != -1)
+        dir = dir.replace("/", "");
+    while (srcDir.indexOf("/") != -1)
+        srcDir = srcDir.replace("/", "");
+
+    dir += "/";
+    srcDir += "/";
 
     const dirPath = srcDir + dir;
     const files = await fs.readdir(dirPath);
