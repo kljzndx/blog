@@ -3,7 +3,7 @@ import path from "node:path"
 
 interface menu {
     text: string
-    collapsed: boolean
+    collapsed?: boolean
     link?: string
     items?: menu[]
 }
@@ -68,7 +68,7 @@ async function loadAsDateTree(dir: string) {
 
     for (const ac of acs) {
         if (!ac.fileName.match(/\d{4}\-\d{2}\-\d{2}\-.+/)) {
-            result.unshift({ text: ac.title ?? ac.fileName, collapsed: false, link: ac.url });
+            result.unshift({ text: ac.title ?? ac.fileName, link: ac.url });
             continue;
         }
 
@@ -104,7 +104,6 @@ async function loadAsDateTree(dir: string) {
 
         mouthObj.items?.push({
             text: ac.title ?? members[3],
-            collapsed: true,
             link: ac.url
         });
     }
