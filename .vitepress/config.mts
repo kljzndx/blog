@@ -4,8 +4,8 @@ import sidebarLoader from "./sidebarLoader"
 async function setup(){
   return defineConfig({
     srcDir: "src/",
-    title: "My Awesome Project",
-    description: "A VitePress Site",
+    title: "快乐就在你的心 的博客",
+    description: "快乐就在你的心 的博客",
     themeConfig: {
       // https://vitepress.dev/reference/default-theme-config
       nav: [
@@ -18,7 +18,7 @@ async function setup(){
       },
   
       socialLinks: [
-        { icon: 'github', link: 'https://github.com/vuejs/vitepress' }
+        { icon: 'github', link: 'https://github.com/kljzndx/blog' }
       ],
     },
   })
