@@ -3,6 +3,7 @@ import sidebarLoader from "./sidebarLoader"
 
 async function setup(){
   return defineConfig({
+    base: "/blog/",
     srcDir: "src/",
     title: "快乐就在你的心 的博客",
     description: "快乐就在你的心 的博客",
