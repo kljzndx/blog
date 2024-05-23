@@ -10,7 +10,7 @@ async function setup(){
       // https://vitepress.dev/reference/default-theme-config
       nav: [
         { text: 'Home', link: '/' },
-        { text: 'Examples', link: '/tech/' }
+        { text: 'Technology', link: '/tech/' }
       ],
   
       sidebar: {
