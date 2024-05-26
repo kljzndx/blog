@@ -3,6 +3,10 @@ import sidebarLoader from "./sidebarLoader"
 
 async function setup() {
   return defineConfig({
+    sitemap: {
+      hostname: "https://kljzndx.github.io/blog/",
+      lastmodDateOnly: true,
+    },
     base: "/blog/",
     srcDir: "src/",
     title: "快乐就在你的心 的博客",
