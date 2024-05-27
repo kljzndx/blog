@@ -25,6 +25,16 @@ async function setup() {
       socialLinks: [
         { icon: 'github', link: 'https://github.com/kljzndx/blog' }
       ],
+
+      darkModeSwitchLabel: '主题',
+      darkModeSwitchTitle: '切换至 夜间模式',
+      lightModeSwitchTitle: '切换至 日间模式',
+      docFooter: {
+        prev: '上一页',
+        next: '下一页'
+      },
+      returnToTopLabel: '回到顶部',
+      sidebarMenuLabel: '目录',
     },
     lastUpdated: true,
     transformPageData(pageData) {
