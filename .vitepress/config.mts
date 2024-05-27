@@ -45,6 +45,7 @@ async function setup() {
           pageData.frontmatter.publishDate = fn.slice(0, fn.lastIndexOf('-'));
       }
 
+      // 禁用内置时间显示控件
       pageData.frontmatter.lastUpdated = false;
     },
   })
