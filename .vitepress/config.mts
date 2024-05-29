@@ -30,7 +30,7 @@ async function setup() {
       },
 
       socialLinks: [
-        { icon: 'github', link: 'https://github.com/kljzndx/blog' },
+        { icon: 'github', link: 'https://github.com/kljzndx/blog', ariaLabel: 'Github' },
         {
           icon: { svg: icon_bili },
           link: 'https://space.bilibili.com/27062443',
