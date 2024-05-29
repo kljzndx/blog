@@ -42,7 +42,7 @@ async function setup() {
         const rp = pageData.relativePath
         const fn = rp.slice(rp.lastIndexOf('/') + 1, rp.lastIndexOf('.'));
         if (fn.match(/\d{4}\-\d{2}\-\d{2}\-.+/))
-          pageData.frontmatter.publishDate = fn.slice(0, fn.lastIndexOf('-'));
+          pageData.frontmatter.publishDate = fn.slice(0, 10);
       }
 
       // 禁用内置时间显示控件
