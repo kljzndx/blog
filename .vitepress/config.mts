@@ -1,7 +1,10 @@
 import { defineConfig } from 'vitepress'
 import sidebarLoader from "./sidebarLoader"
+import { readFile } from 'node:fs/promises'
 
 async function setup() {
+  const icon_bili = await readFile('public/img/bilibili.svg', 'utf-8');
+
   return defineConfig({
     sitemap: {
       hostname: "https://kljzndx.github.io/blog/",
@@ -12,7 +15,7 @@ async function setup() {
     vite: {
       publicDir: '../public/'
     },
-    
+
     title: "快乐就在你的心 的博客",
     description: "快乐就在你的心 的博客",
     themeConfig: {
@@ -27,7 +30,12 @@ async function setup() {
       },
 
       socialLinks: [
-        { icon: 'github', link: 'https://github.com/kljzndx/blog' }
+        { icon: 'github', link: 'https://github.com/kljzndx/blog' },
+        {
+          icon: { svg: icon_bili },
+          link: 'https://space.bilibili.com/27062443',
+          ariaLabel: 'B站 (BiliBili)'
+        }
       ],
 
       darkModeSwitchLabel: '主题',
