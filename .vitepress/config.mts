@@ -9,6 +9,10 @@ async function setup() {
     },
     base: "/blog/",
     srcDir: "src/",
+    vite: {
+      publicDir: '../public/'
+    },
+    
     title: "快乐就在你的心 的博客",
     description: "快乐就在你的心 的博客",
     themeConfig: {
