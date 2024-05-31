@@ -3,7 +3,6 @@ title: 常见数据格式文件简介 xml, yaml, json
 categories: 简介
 tags: [数据格式]
 ---
-   
 
 # 前言
 

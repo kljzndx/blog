@@ -4,7 +4,6 @@ categories: c#
 tags: [process]
 ---
 
-
 # 前言
 
 Process 类主要有两个用途，一是当个uri启动器，直接打开相关联的软件。二是执行程序并监视其输出
@@ -123,7 +122,7 @@ private static void StartExeProcess()
         return;
 
     _exeProcess.Start();
-    
+
     // 开启消息监听
     _exeProcess.BeginOutputReadLine();
     _exeProcess.BeginErrorReadLine();
