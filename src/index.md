@@ -4,7 +4,7 @@ layout: home
 
 hero:
   name: "欢迎访问本博客"
-  text: "望您不虚此行"
+  text: "望您能不虚此行"
   tagline: 乐在此心，方得安宁
   actions:
     - theme: brand
