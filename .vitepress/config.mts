@@ -22,11 +22,13 @@ async function setup() {
       // https://vitepress.dev/reference/default-theme-config
       nav: [
         { text: '主页', link: '/' },
+        { text: '微博', link: '/micro/' },
         { text: '技术', link: '/tech/' },
         { text: '自传', link: '/life/' },
       ],
 
       sidebar: {
+        "/micro/": await sidebarLoader.loadAsDateTree("/micro/"),
         "/tech/": await sidebarLoader.loadAsDateTree("/tech/"),
         "/life/": await sidebarLoader.loadAsDateTree("/life/"),
       },
