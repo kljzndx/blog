@@ -28,8 +28,8 @@ async function setup() {
       ],
 
       sidebar: {
-        "/micro/": await sidebarLoader.loadAsDateTree("/micro/"),
-        "/tech/": await sidebarLoader.loadAsDateTree("/tech/"),
+        "/micro/": await sidebarLoader.loadAsDateTree("/micro/", true, true),
+        "/tech/": await sidebarLoader.loadAsDateTree("/tech/", true),
         "/life/": await sidebarLoader.loadAsDateTree("/life/"),
       },
 
