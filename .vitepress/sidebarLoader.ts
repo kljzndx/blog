@@ -55,7 +55,7 @@ async function loadFiles(dir: string, srcDir: string = "src/") {
     return result;
 }
 
-async function loadAsDateTree(dir: string, isYearDescending: boolean = false, isMouthDescending: boolean = false) {
+async function loadAsDateTree(dir: string, isYearDescending: boolean = false, isMouthDescending: boolean = false, isDayDescending: boolean = false) {
     const result: menu[] = [];
 
     let yearStr = "";
@@ -108,10 +108,15 @@ async function loadAsDateTree(dir: string, isYearDescending: boolean = false, is
                 yearObj.items?.push(mouthObj);
         }
 
-        mouthObj.items?.push({
+        const dayObj: menu = {
             text: members[2] + "日  " + (ac.title ?? members[3]),
             link: ac.url
-        });
+        };
+
+        if (isDayDescending)
+            mouthObj.items?.unshift(dayObj);
+        else
+            mouthObj.items?.push(dayObj);
     }
 
     return result;
