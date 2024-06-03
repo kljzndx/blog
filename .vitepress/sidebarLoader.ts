@@ -88,7 +88,7 @@ async function loadAsDateTree(dir: string, isYearDescending: boolean = false, is
             }
 
             if (isYearDescending)
-                result.unshift(yearObj)
+                result.unshift(yearObj);
             else
                 result.push(yearObj)
         }
@@ -103,7 +103,7 @@ async function loadAsDateTree(dir: string, isYearDescending: boolean = false, is
             }
 
             if (isMouthDescending)
-                yearObj.items?.unshift(mouthObj)
+                yearObj.items?.unshift(mouthObj);
             else
                 yearObj.items?.push(mouthObj);
         }
