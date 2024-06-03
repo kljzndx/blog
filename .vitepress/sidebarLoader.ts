@@ -109,7 +109,7 @@ async function loadAsDateTree(dir: string, isYearDescending: boolean = false, is
         }
 
         mouthObj.items?.push({
-            text: ac.title ?? members[3],
+            text: members[2] + "日  " + (ac.title ?? members[3]),
             link: ac.url
         });
     }
