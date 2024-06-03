@@ -55,7 +55,7 @@ async function loadFiles(dir: string, srcDir: string = "src/") {
     return result;
 }
 
-async function loadAsDateTree(dir: string) {
+async function loadAsDateTree(dir: string, isYearDescending: boolean = true, isMouthDescending: boolean = true) {
     const result: menu[] = [];
 
     let yearStr = "";
@@ -87,7 +87,10 @@ async function loadAsDateTree(dir: string) {
                 items: []
             }
 
-            result.unshift(yearObj)
+            if (isYearDescending)
+                result.unshift(yearObj)
+            else
+                result.push(yearObj)
         }
 
         if (mouth != mouthStr) {
@@ -99,7 +102,10 @@ async function loadAsDateTree(dir: string) {
                 items: []
             }
 
-            yearObj.items?.push(mouthObj);
+            if (isMouthDescending)
+                yearObj.items?.unshift(mouthObj)
+            else
+                yearObj.items?.push(mouthObj);
         }
 
         mouthObj.items?.push({
