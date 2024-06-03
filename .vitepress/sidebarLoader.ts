@@ -55,7 +55,7 @@ async function loadFiles(dir: string, srcDir: string = "src/") {
     return result;
 }
 
-async function loadAsDateTree(dir: string, isYearDescending: boolean = true, isMouthDescending: boolean = true) {
+async function loadAsDateTree(dir: string, isYearDescending: boolean = false, isMouthDescending: boolean = false) {
     const result: menu[] = [];
 
     let yearStr = "";
