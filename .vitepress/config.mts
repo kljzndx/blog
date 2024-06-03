@@ -28,7 +28,7 @@ async function setup() {
       ],
 
       sidebar: {
-        "/micro/": await sidebarLoader.loadAsDateTree("/micro/", true, true),
+        "/micro/": await sidebarLoader.loadAsDateTree("/micro/", true, true, true),
         "/tech/": await sidebarLoader.loadAsDateTree("/tech/", true),
         "/life/": await sidebarLoader.loadAsDateTree("/life/"),
       },
