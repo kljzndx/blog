@@ -37,16 +37,19 @@ async function loadFiles(dir: string, srcDir: string = "src/") {
 
         if (true) {
             const content = await fs.readFile(path.resolve(srcDir + dir + fn), "utf-8");
-            const ymlStart = content.indexOf("---\n") + 4;
-            const ymlEnd = content.indexOf("---", ymlStart + 1);
 
-            let titleStart = content.indexOf("title: ", ymlStart) + 7;
-            if (titleStart == -1 + 7 || titleStart <= ymlStart || titleStart >= ymlEnd)
-                titleStart = content.indexOf("# ") + 2;
-            const titleEnd = content.indexOf("\n", titleStart);
+            if (true) {
+                const ymlStart = content.indexOf("---");
+                const ymlEnd = content.indexOf("---", ymlStart + 3);
+                if (ymlStart != -1 && ymlEnd != -1) {
+                    const yml = content.slice(ymlStart + 3, ymlEnd).trim();
 
-            if (titleStart != -1 + 2)
-                title = content.slice(titleStart, titleEnd == -1 ? undefined : titleEnd).trim();
+                    title = yml.match(/title: (?<title>.+)/)?.groups?.["title"];
+                    console.log(title);
+                }
+            }
+            if (title == undefined)
+                title = content.match(/\# (?<title>.+)/)?.groups?.["title"];
         }
 
         result.push({ url, fileName, title });
