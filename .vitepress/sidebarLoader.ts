@@ -12,6 +12,7 @@ interface Article {
     url: string
     fileName: string
     title?: string
+    categories?: string
 }
 
 async function loadFiles(dir: string, srcDir: string = "src/") {
@@ -34,6 +35,7 @@ async function loadFiles(dir: string, srcDir: string = "src/") {
         const fileName = fn.slice(0, fn.lastIndexOf('.'));
         const url = "/" + dir + (fileName === "index" ? "" : fileName);
         let title: string | undefined = undefined;
+        let categories: string | undefined = undefined;
 
         if (true) {
             const content = await fs.readFile(path.resolve(srcDir + dir + fn), "utf-8");
@@ -46,6 +48,7 @@ async function loadFiles(dir: string, srcDir: string = "src/") {
                     const yml = content.slice(ymlStart + 3, ymlEnd).trim();
 
                     title = yml.match(/title: (?<title>.+)/)?.groups?.["title"];
+                    categories = yml.match(/categories: (?<categories>.+)/)?.groups?.["categories"];
                 }
             }
 
@@ -53,7 +56,7 @@ async function loadFiles(dir: string, srcDir: string = "src/") {
                 title = content.match(/\# (?<title>.+)/)?.groups?.["title"];
         }
 
-        result.push({ url, fileName, title });
+        result.push({ url, fileName, title, categories });
     }
 
     return result;
