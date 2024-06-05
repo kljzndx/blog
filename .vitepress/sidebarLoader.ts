@@ -62,6 +62,38 @@ async function loadFiles(dir: string, srcDir: string = "src/") {
     return result;
 }
 
+async function loadAsCategories(dir: string) {
+    const acs = await loadFiles(dir);
+    const dict: {
+        [key: string]: menu[]
+    } = {}
+
+    let index: menu = { text: "首页", link: dir };
+
+    for (const article of acs) {
+        const menu = { text: article.title ?? "未找到标题", link: article.url };
+        if (article.fileName == "index") {
+            index = menu;
+            continue;
+        }
+
+        const key = article.categories?.toLowerCase() ?? "未分类";
+        dict[key] ??= [];
+        dict[key].unshift(menu);
+    }
+
+    const result: menu[] = []
+    for (const key in dict) {
+        if (Object.prototype.hasOwnProperty.call(dict, key)) {
+            const element = dict[key];
+            result.unshift({ text: key, items: element });
+        }
+    }
+    result.unshift(index);
+
+    return result;
+}
+
 async function loadAsDateTree(dir: string, isYearDescending: boolean = false, isMouthDescending: boolean = false, isDayDescending: boolean = false) {
     const result: menu[] = [];
 
@@ -130,5 +162,6 @@ async function loadAsDateTree(dir: string, isYearDescending: boolean = false, is
 }
 
 export default {
-    loadAsDateTree
+    loadAsDateTree,
+    loadAsCategories
 }

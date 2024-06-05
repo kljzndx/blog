@@ -29,7 +29,7 @@ async function setup() {
 
       sidebar: {
         "/micro/": await sidebarLoader.loadAsDateTree("/micro/", true, true, true),
-        "/tech/": await sidebarLoader.loadAsDateTree("/tech/", true),
+        "/tech/": await sidebarLoader.loadAsCategories("/tech/"),
         "/life/": await sidebarLoader.loadAsDateTree("/life/"),
       },
 
