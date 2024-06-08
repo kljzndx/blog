@@ -18,6 +18,7 @@ async function setup() {
 
     title: "快乐就在你的心 的博客",
     description: "快乐就在你的心 的博客",
+    head: [['link', { rel: 'icon', href: '/blog/favicon.ico' }]],
     themeConfig: {
       // https://vitepress.dev/reference/default-theme-config
       nav: [
