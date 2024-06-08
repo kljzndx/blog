@@ -43,7 +43,7 @@ async function setup() {
         }
       ],
 
-      logo:"/p-img/logo.png",
+      logo:"/logo.png",
       darkModeSwitchLabel: '主题',
       darkModeSwitchTitle: '切换至 夜间模式',
       lightModeSwitchTitle: '切换至 日间模式',
