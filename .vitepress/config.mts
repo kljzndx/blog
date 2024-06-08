@@ -3,7 +3,7 @@ import sidebarLoader from "./sidebarLoader"
 import { readFile } from 'node:fs/promises'
 
 async function setup() {
-  const icon_bili = await readFile('public/img/bilibili.svg', 'utf-8');
+  const icon_bili = await readFile('src/p-img/bilibili.svg', 'utf-8');
 
   return defineConfig({
     sitemap: {
@@ -42,6 +42,7 @@ async function setup() {
         }
       ],
 
+      logo:"/p-img/logo.png",
       darkModeSwitchLabel: '主题',
       darkModeSwitchTitle: '切换至 夜间模式',
       lightModeSwitchTitle: '切换至 日间模式',
