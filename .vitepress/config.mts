@@ -53,6 +53,10 @@ async function setup() {
       },
       returnToTopLabel: '回到顶部',
       sidebarMenuLabel: '目录',
+      outline: {
+        label: '内容目录',
+        level: 'deep'
+      },
     },
     lastUpdated: true,
     transformPageData(pageData) {
