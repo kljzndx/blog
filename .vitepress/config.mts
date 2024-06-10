@@ -52,7 +52,7 @@ async function setup() {
         next: '下一页'
       },
       returnToTopLabel: '回到顶部',
-      sidebarMenuLabel: '目录',
+      sidebarMenuLabel: '文章目录',
       outline: {
         label: '内容目录',
         level: 'deep'
