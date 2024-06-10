@@ -4,11 +4,11 @@ categories: 简介
 tags: [数据格式]
 ---
 
-# 前言
+## 前言
 
 在此文章中我会通过编写一个用户列表模型的示例来讲解各个语法
 
-# xml
+## xml
 
 ``` xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -99,7 +99,7 @@ xml标签有两种类型，在详细说明之前先来看个示例
 <!-- 注释内容 -->
 ```
 
-# yaml (.yml .yaml)
+## yaml (.yml .yaml)
 
 YAML = Yaml Ain't a Markup Language
 
@@ -179,13 +179,13 @@ array:
 最后再来看看注释的语法
 
 ``` yaml
-# 注释内容
+## 注释内容
 key: value    # 注释内容
 ```
 
 语法很简单，就是从井号开始一直到行尾都算是注释内容，还有要说明的一点就是：**yaml 不支持多行注释**
 
-# json
+## json
 
 ``` json
 {
