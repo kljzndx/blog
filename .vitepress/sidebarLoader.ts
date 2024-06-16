@@ -89,6 +89,18 @@ async function loadAsCategories(dir: string) {
             result.unshift({ text: key, items: element });
         }
     }
+
+    result.sort((a, b) => {
+        const aDate = new Date(a.items?.[0]?.link?.slice(dir.length, dir.length + 10) ?? "2000-01-01");
+        const bDate = new Date(b.items?.[0]?.link?.slice(dir.length, dir.length + 10) ?? "2000-01-01");
+
+        if (aDate == bDate)
+            return 0;
+        else if (aDate > bDate)
+            return -1;
+        else return 1;
+    });
+
     result.unshift(index);
 
     return result;
