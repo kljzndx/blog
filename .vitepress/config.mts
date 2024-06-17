@@ -25,13 +25,13 @@ async function setup() {
         { text: '主页', link: '/' },
         { text: '微博', link: '/micro/' },
         { text: '技术', link: '/tech/' },
-        { text: '自传', link: '/life/' },
+        { text: '关于作者', items: [{ text: "自传", link: '/about/life/' }] },
       ],
 
       sidebar: {
         "/micro/": await sidebarLoader.loadAsDateTree("/micro/", true, true, true),
         "/tech/": await sidebarLoader.loadAsCategories("/tech/"),
-        "/life/": await sidebarLoader.loadAsDateTree("/life/"),
+        "/about/life/": await sidebarLoader.loadAsDateTree("/about/life/"),
       },
 
       socialLinks: [
@@ -43,7 +43,7 @@ async function setup() {
         }
       ],
 
-      logo:"/logo.png",
+      logo: "/logo.png",
       darkModeSwitchLabel: '主题',
       darkModeSwitchTitle: '切换至 夜间模式',
       lightModeSwitchTitle: '切换至 日间模式',
