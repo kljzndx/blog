@@ -31,7 +31,18 @@ async function setup() {
       sidebar: {
         "/micro/": await sidebarLoader.loadAsDateTree("/micro/", true, true, true),
         "/tech/": await sidebarLoader.loadAsCategories("/tech/"),
-        "/about/": await sidebarLoader.loadAsCategories("/about/"),
+        "/about/": [
+          ...(await sidebarLoader.loadAsCategories("/about/")), 
+          {
+            text:'更多信息',
+            items:[
+              {
+                text:'我的自传',
+                link:'/about/life/',
+              }
+            ]
+          }
+        ],
         "/about/life/": await sidebarLoader.loadAsDateTree("/about/life/"),
       },
 
