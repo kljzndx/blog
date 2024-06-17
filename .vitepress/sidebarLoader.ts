@@ -20,7 +20,7 @@ async function loadFiles(dir: string, srcDir: string = "src/") {
         dir = dir.slice(1);
 
     const dirPath = srcDir + dir;
-    const files = await fs.readdir(dirPath);
+    const files = await fs.readdir(dirPath, { recursive: false });
     const result: Article[] = [];
 
     for (const fn of files) {
