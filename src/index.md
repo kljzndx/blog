@@ -14,8 +14,8 @@ hero:
       text: 技术
       link: /tech/
     - theme: alt
-      text: 自传
-      link: /life/
+      text: 简历
+      link: /about/
 
 features:
   - title: Feature A
