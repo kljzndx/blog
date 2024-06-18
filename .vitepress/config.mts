@@ -1,6 +1,7 @@
 import { defineConfig } from 'vitepress'
-import sidebarLoader from "./sidebarLoader"
 import { readFile } from 'node:fs/promises'
+import sidebarLoader from "./sidebarLoader"
+import tools from './tools'
 
 async function setup() {
   const icon_bili = await readFile('src/p-img/bilibili.svg', 'utf-8');
@@ -73,10 +74,10 @@ async function setup() {
     lastUpdated: true,
     transformPageData(pageData) {
       if (pageData.frontmatter.publishDate == undefined) {
-        const rp = pageData.relativePath
-        const fn = rp.slice(rp.lastIndexOf('/') + 1, rp.lastIndexOf('.'));
-        if (fn.match(/\d{4}\-\d{2}\-\d{2}\-.+/))
-          pageData.frontmatter.publishDate = fn.slice(0, 10);
+        const pubDate = tools.getPubDateOnPath(pageData.relativePath);
+
+        if (pubDate)
+          pageData.frontmatter.publishDate = pubDate;
       }
 
       // 禁用内置时间显示控件
