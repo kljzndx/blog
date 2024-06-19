@@ -1,5 +1,5 @@
 <script setup lang="ts">
-    import {data} from './tech.data.ts'
+    import { data } from './tech.data.ts'
     import ArticleList from '../components/ArticleList.vue'
 </script>
 
