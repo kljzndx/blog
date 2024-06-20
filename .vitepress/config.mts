@@ -45,6 +45,7 @@ async function setup() {
           }
         ],
         "/about/life/": await sidebarLoader.loadAsDateTree("/about/life/"),
+        "/about/self-q-a/": await sidebarLoader.loadAsCategories("/about/self-q-a/"),
       },
 
       socialLinks: [
