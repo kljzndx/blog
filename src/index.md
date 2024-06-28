@@ -8,14 +8,14 @@ hero:
   tagline: 乐在此心，方得安宁
   actions:
     - theme: brand
+      text: 简历
+      link: /about/
+    - theme: alt
       text: 微博
       link: /micro/
     - theme: alt
       text: 技术
       link: /tech/
-    - theme: alt
-      text: 简历
-      link: /about/
 
 features:
   - title: Feature A
