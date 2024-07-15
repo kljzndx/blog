@@ -60,13 +60,15 @@ Path: %JAVA_HOME%\bin
 
 如果看到以下输出则代表配置成功
 
-> 注意：FreeMind 只支持 JDK17 及*以下*版本，若用 JDK21 是跑不起来程序的
-
 ```
 openjdk 17.0.11 2024-04-16 LTS
 OpenJDK Runtime Environment Microsoft-9388408 (build 17.0.11+9-LTS)
 OpenJDK 64-Bit Server VM Microsoft-9388408 (build 17.0.11+9-LTS, mixed mode, sharing)
 ```
+
+:::danger FreeMind 所支持的 JDK 版本
+注意：FreeMind 只支持 JDK17 及**以下**版本，若用 JDK21 是跑不起来程序的
+:::
 
 #### 注册表
 
