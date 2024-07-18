@@ -20,9 +20,15 @@ async function setup() {
 
     title: "快乐就在你的心 的博客",
     description: "快乐就在你的心 的博客",
-    head: [['link', { rel: 'icon', href: '/blog/favicon.ico' }]],
+    head: [
+      ['link', { rel: 'icon', href: '/blog/favicon.ico' }],
+      ['script', {async:'', src: 'https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js'}]
+    ],
     themeConfig: {
       // https://vitepress.dev/reference/default-theme-config
+      footer:{
+        message: '<span id="busuanzi_container_site_uv">本站总访问量 <span id="busuanzi_value_site_uv"></span> 次</span>'
+      },
       nav: [
         { text: '主页', link: '/' },
         { text: '微博', link: '/micro/' },
