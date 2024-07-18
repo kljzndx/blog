@@ -27,6 +27,7 @@ onMounted(() => {
             <div class="article-date">
                 <p v-if="frontmatter.publishDate">发布时间：{{ frontmatter.publishDate }}</p>
                 <p>更新时间：{{ lastDate }}</p>
+                <p id="busuanzi_container_page_pv" style="display: none;">本文章访问量：<span id="busuanzi_value_page_pv"></span>次</p>
             </div>
         </template>
     </Layout>
