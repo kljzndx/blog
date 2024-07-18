@@ -11,6 +11,7 @@ async function setup() {
       hostname: "https://kljzndx.github.io/blog/",
       lastmodDateOnly: true,
     },
+    lang: "zh-CN",
     base: "/blog/",
     srcDir: "src/",
     vite: {
