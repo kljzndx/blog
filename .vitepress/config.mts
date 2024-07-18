@@ -27,7 +27,7 @@ async function setup() {
     themeConfig: {
       // https://vitepress.dev/reference/default-theme-config
       footer:{
-        message: '<span id="busuanzi_container_site_uv">本站总访问量 <span id="busuanzi_value_site_uv"></span> 次</span>'
+        message: '<span id="busuanzi_container_site_pv">本站总访问量 <span id="busuanzi_value_site_pv"></span> 次</span>，<span id="busuanzi_container_site_uv">本站总访客量 <span id="busuanzi_value_site_uv"></span> 人</span>'
       },
       nav: [
         { text: '主页', link: '/' },
