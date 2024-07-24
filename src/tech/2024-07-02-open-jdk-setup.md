@@ -94,4 +94,4 @@ Windows Registry Editor Version 5.00
 
 ## 番外
 
-顺便说一下，这个 FreeMind 是我去年用的软件，现在我已经换成 FreePlane 了，原因是这个软件已经停止维护超过十年了。
+顺便说一下，这个 FreeMind 是我去年用的软件，现在我已经换成 [FreePlane](https://sourceforge.net/projects/freeplane/files/freeplane%20stable/) 了，原因是这个软件已经停止维护超过十年了。
