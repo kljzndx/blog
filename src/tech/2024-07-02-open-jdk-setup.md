@@ -3,6 +3,10 @@ title: open jdk 配置方法
 categories: java
 ---
 
+## 视频版
+
+<iframe style="width: 100%; height: 25rem" src="//player.bilibili.com/player.html?bvid=BV1AkvHe7E3Q&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
 ## 前言
 
 去年的时候，我在找一个免费开源的思维导图工具，好不容易找到一个"FreeMind"吧，结果他还需要安装java环境才能用。由于我是个业余程序员的缘故，我不想单独装jre，我想装jdk。我又顺便想起了官方的jdk好像有版权问题，所以出了个openjdk，上网一搜好像两者功能上没啥区别。得，就装他了。
