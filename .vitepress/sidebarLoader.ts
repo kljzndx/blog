@@ -1,6 +1,8 @@
 import fs from "node:fs/promises"
 import path from "node:path"
 
+import tls from "./tools";
+
 interface menu {
     text: string
     collapsed?: boolean
@@ -42,13 +44,13 @@ async function loadFiles(dir: string, srcDir: string = "src/") {
                 if (ymlStart != -1 && ymlEnd != -1) {
                     const yml = content.slice(ymlStart + 3, ymlEnd).trim();
 
-                    title = yml.match(/title: (?<title>.+)/)?.groups?.["title"];
-                    categories = yml.match(/categories: (?<categories>.+)/)?.groups?.["categories"];
+                    title = tls.findLine(yml, "title:")?.replace("title:", "").trim();
+                    categories = tls.findLine(yml, "categories:")?.replace("categories:", "").trim();
                 }
             }
 
             if (title == undefined)
-                title = content.match(/\# (?<title>.+)/)?.groups?.["title"];
+                title =  tls.findLine(content, "# ")?.replace("# ", "").trimEnd();
         }
 
         result.push({ url, fileName, title, categories });

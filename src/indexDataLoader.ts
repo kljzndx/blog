@@ -35,15 +35,8 @@ function loadIndexData(glob: string) {
 
                 if (item.frontmatter.title)
                     title = item.frontmatter.title;
-                else {
-                    const idH1 = item.src.indexOf('# ');
-                    if (idH1 != -1) {
-                        const idRn = item.src.indexOf("\n", idH1);
-                        title = item.src.slice(idH1 + 2, idRn == -1 ? undefined : idRn).trim();
-                    }
-                    else
-                        title = "无标题";
-                }
+                else
+                    title = tools.findLine(item.src, "# ")?.replace("# ", "").trimEnd() ?? "无标题";
 
                 result.push({
                     url: item.url,
