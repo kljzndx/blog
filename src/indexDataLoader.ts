@@ -36,7 +36,7 @@ function loadIndexData(glob: string) {
                 if (item.frontmatter.title)
                     title = item.frontmatter.title;
                 else
-                    title = tools.findLine(item.src, "# ")?.replace("# ", "").trimEnd() ?? "无标题";
+                    title = tools.findLine(item.src, "# ")?.replace("# ", "").trimEnd() ?? "未找到标题";
 
                 result.push({
                     url: item.url,

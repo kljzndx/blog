@@ -74,7 +74,7 @@ async function loadAsCategories(dir: string) {
             continue;
         }
 
-        const key = article.categories?.toLowerCase() ?? "未分类";
+        const key = article.categories?.toLowerCase() ?? "未指定分类";
         dict[key] ??= [];
         dict[key].unshift(menu);
     }
@@ -116,7 +116,7 @@ async function loadAsDateTree(dir: string, isYearDescending: boolean = false, is
 
     for (const ac of acs) {
         if (!ac.fileName.match(/\d{4}\-\d{2}\-\d{2}\-.+/)) {
-            result.unshift({ text: ac.title ?? ac.fileName, link: ac.url });
+            result.unshift({ text: ac.title ?? "未找到标题", link: ac.url });
             continue;
         }
 
