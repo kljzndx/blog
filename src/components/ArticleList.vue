@@ -7,13 +7,22 @@ interface Props {
         url: string,
         publishDate: string,
         title: string
-    }[]
-    isDescending: boolean
+    }[],
+    isDescending: boolean,
+    takeNumber?: number
 }
 
 const props = defineProps<Props>();
 
-const source = computed(() => props.isDescending ? [...props.source].reverse() : [...props.source]);
+const endId = computed(() => props.takeNumber == 0 ? undefined : props.takeNumber);
+const source = computed(() => {
+    let result = [...props.source];
+    if (props.isDescending)
+        result = result.reverse();
+
+    result = result.slice(0, endId.value);
+    return result;
+});
 </script>
 
 <template>
