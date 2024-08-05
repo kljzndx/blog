@@ -39,7 +39,7 @@ ul.acs-list {
     margin: 0;
 }
 
-.ac-item{
+li.ac-item{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
