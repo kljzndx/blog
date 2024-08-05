@@ -26,21 +26,23 @@ const source = computed(() => {
 </script>
 
 <template>
-    <ul :class="$style['acs-list']">
-        <li :class="$style['ac-item']" v-for="item of source" :key="item.url">
-            <span style="font-family: sans-serif; margin-right: 1em;">{{ item.publishDate }}</span>
-            <a :href="withBase(item.url)"> {{ item.title }} </a>
-        </li>
-    </ul>
+    <div :class="$style['article-list']">
+        <ul :class="$style['acs-list']">
+            <li :class="$style['ac-item']" v-for="item of source" :key="item.url">
+                <span style="font-family: sans-serif; margin-right: 1em;">{{ item.publishDate }}</span>
+                <a :href="withBase(item.url)"> {{ item.title }} </a>
+            </li>
+        </ul>
+    </div>
 </template>
 
 <style module>
-ul.acs-list {
+.article-list ul.acs-list {
     margin: 0;
     padding: 0.5rem;
 }
 
-li.ac-item{
+.article-list li.ac-item{
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;

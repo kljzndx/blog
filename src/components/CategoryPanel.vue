@@ -26,15 +26,17 @@ const data = [
 </script>
 
 <template>
-    <ul :class="$style['cate-panel']">
-        <li :class="$style['cate-item']" v-for="e of data">
-            <ArticleGroup :items="e.items" :title="e.title" :url="e.url" />
-        </li>
-    </ul>
+    <div :class="$style['category-panel']">
+        <ul :class="$style['cate-panel']">
+            <li :class="$style['cate-item']" v-for="e of data">
+                <ArticleGroup :items="e.items" :title="e.title" :url="e.url" />
+            </li>
+        </ul>
+    </div>
 </template>
 
 <style module>
-ul.cate-panel {
+.category-panel ul.cate-panel {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -43,11 +45,11 @@ ul.cate-panel {
     padding: 0;
 }
 
-li.cate-item {
+.category-panel li.cate-item {
     list-style: none;
 }
 
-li.cate-item+li {
+.category-panel li.cate-item+li {
     margin: 0;
 }
 </style>

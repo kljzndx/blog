@@ -25,34 +25,36 @@ const url = computed(() => withBase(props.url))
 </script>
 
 <template>
-    <div :class="$style['acs-group']">
-        <div :class="$style.header">
-            <h3>{{ props.title }}</h3>
-            <a :href="url">更多>>></a>
-        </div>
-        <div :class="$style['acs-container']">
-            <ArticleList :source="props.items" :isDescending="props.isDescending" takeNumber="10" />
+    <div :class="$style['article-group']">
+        <div :class="$style['acs-group']">
+            <div :class="$style.header">
+                <h3>{{ props.title }}</h3>
+                <a :href="url">更多>>></a>
+            </div>
+            <div :class="$style['acs-container']">
+                <ArticleList :source="props.items" :isDescending="props.isDescending" takeNumber="10" />
+            </div>
         </div>
     </div>
 </template>
 
 <style module>
-.acs-group {
+.article-group .acs-group {
     width: 22rem;
     background-color: var(--vp-c-gray-2);
     border: 1rem solid var(--vp-c-gray-2);
     border-radius: 1rem;
 }
-.header {
+.article-group .header {
     display: flex;
     justify-content: space-between;
     align-items: center;
     padding: 0 0 1rem 0;
 }
-.header>h3 {
+.article-group .header>h3 {
     margin: 0;
 }
-.acs-container {
+.article-group .acs-container {
     height: 21rem;
     background-color: var(--vp-c-bg);
 }
