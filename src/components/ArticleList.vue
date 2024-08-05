@@ -37,6 +37,7 @@ const source = computed(() => {
 <style module>
 ul.acs-list {
     margin: 0;
+    padding: 0.5rem;
 }
 
 li.ac-item{
