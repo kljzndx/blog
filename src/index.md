@@ -16,13 +16,11 @@ hero:
     - theme: alt
       text: 技术
       link: /tech/
-
-features:
-  - title: Feature A
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature B
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
-  - title: Feature C
-    details: Lorem ipsum dolor sit amet, consectetur adipiscing elit
 ---
 
+<script setup lang="ts">
+    import CategoryPanel from './components/CategoryPanel.vue'
+    
+</script>
+
+<CategoryPanel />
