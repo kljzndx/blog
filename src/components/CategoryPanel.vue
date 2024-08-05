@@ -8,17 +8,17 @@ import { data as Dlife } from '../about/life/life.data.ts'
 const data = [
     {
         title: "微博",
-        url: "micro/",
+        url: "/micro/",
         items: Dmicro,
     },
     {
         title: "技术",
-        url: "tech/",
+        url: "/tech/",
         items: Dtech,
     },
     {
         title: "自传",
-        url: "about/life/",
+        url: "/about/life/",
         items: Dlife,
     },
 ]
