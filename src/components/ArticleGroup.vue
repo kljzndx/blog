@@ -53,6 +53,7 @@ const url = computed(() => withBase(props.url))
     margin: 0;
 }
 .acs-container {
+    height: 21rem;
     background-color: var(--vp-c-neutral-inverse);
 }
 </style>
