@@ -11,11 +11,8 @@ hero:
       text: 简历
       link: /about/
     - theme: alt
-      text: 微博
-      link: /micro/
-    - theme: alt
-      text: 技术
-      link: /tech/
+      text: 邮箱
+      link: mailto:kljzndx@outlook.com
 ---
 
 <script setup lang="ts">
