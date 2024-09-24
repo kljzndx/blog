@@ -12,7 +12,7 @@ publishDate: "2016-07-03"
 
 > 摘自 [混乱的思绪](/micro/2024-03-31-混乱的思绪)
 
-::: details 文章目录（时间降序）
+::: info 文章目录（时间降序）
 
 <ArticleList :source="data" isDescending />
 

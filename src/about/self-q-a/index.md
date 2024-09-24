@@ -9,7 +9,7 @@
 
 由于主要目的是情绪释放，所以本版块内容都不一定真实可信，同时有可能会言论过激
 
-::: details 文章目录（时间降序）
+::: info 文章目录（时间降序）
 
 <ArticleList :source="data" isDescending />
 

@@ -5,7 +5,7 @@
 
 # 测试主页
 
-::: details 文章目录（时间降序）
+::: info 文章目录（时间降序）
 
 <ArticleList :source="data" isDescending />
 
