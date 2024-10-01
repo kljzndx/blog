@@ -47,6 +47,10 @@ async function setup() {
               {
                 text:'我的自传',
                 link:'/about/life/',
+              },
+              {
+                text:'我的导航',
+                link:'https://kljzndx.github.io/navigation/',
               }
             ]
           }
