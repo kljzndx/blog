@@ -18,7 +18,7 @@ const data = [
     },
     {
         title: "自传",
-        url: "/about/life/",
+        url: "/about/",
         items: Dlife,
     },
 ]
