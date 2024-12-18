@@ -28,7 +28,8 @@ async function setup() {
               quality:80
             }),
             png: minPng({
-              quality:[0.7, 0.8]
+              quality:[0.7, 0.8],
+              speed:8
             }),
             gif: minGif({
               optimizationLevel:2
