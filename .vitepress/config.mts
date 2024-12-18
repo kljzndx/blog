@@ -3,6 +3,11 @@ import { readFile } from 'node:fs/promises'
 import sidebarLoader from "./sidebarLoader"
 import tools from './tools'
 
+import viteImagemin from '@vheemstra/vite-plugin-imagemin'
+import minJpg from 'imagemin-mozjpeg'
+import minPng from 'imagemin-pngquant'
+import minGif from 'imagemin-gifsicle'
+
 async function setup() {
   const icon_bili = await readFile('src/p-img/bilibili.svg', 'utf-8');
 
@@ -15,7 +20,23 @@ async function setup() {
     base: "/blog/",
     srcDir: "src/",
     vite: {
-      publicDir: '../public/'
+      publicDir: '../public/',
+      plugins:[
+        viteImagemin({
+          plugins:{
+            jpg: minJpg({
+              quality:80
+            }),
+            png: minPng({
+              quality:[0.7, 0.8]
+            }),
+            gif: minGif({
+              optimizationLevel:2
+            })
+          },
+          root:'../'
+        })
+      ],
     },
 
     title: "快乐就在你的心 的博客",

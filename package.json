@@ -12,6 +12,10 @@
   "license": "MIT",
   "devDependencies": {
     "@types/node": "^20.12.12",
+    "@vheemstra/vite-plugin-imagemin": "^2.0.0",
+    "imagemin-gifsicle": "^7.0.0",
+    "imagemin-mozjpeg": "^10.0.0",
+    "imagemin-pngquant": "^10.0.0",
     "vitepress": "^1.4.1"
   },
   "dependencies": {
