@@ -15,6 +15,10 @@ publishDate: "2025-01-13"
 
 <!--@include: ./2023-01-23-总序1.md{3,}-->
 
+## 第二版——旱鸭子（2025年）
+
+<!--@include: ./2025-01-13-总序2.md{3,}-->
+
 ::: info 文章目录
 
 <ArticleList :source="data" />
