@@ -1,7 +1,5 @@
 ﻿---
 title: 《人生随笔》总序
-categories: 人生随笔
-tags: [随便写写]
 publishDate: "2025-01-13"
 ---
 <script setup lang="ts">
