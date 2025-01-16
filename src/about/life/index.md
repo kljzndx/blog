@@ -1,6 +1,6 @@
 ﻿---
 title: 《人生随笔》总序
-publishDate: "2025-01-13"
+publishDate: "2023-01-23"
 ---
 <script setup lang="ts">
     import { data } from './life.data.ts'
