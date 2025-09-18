@@ -99,9 +99,9 @@ async function setup() {
         next: '下一页'
       },
       returnToTopLabel: '回到顶部',
-      sidebarMenuLabel: '文章目录',
+      sidebarMenuLabel: '板块目录',
       outline: {
-        label: '内容目录',
+        label: '文章目录',
         level: 'deep'
       },
     },
