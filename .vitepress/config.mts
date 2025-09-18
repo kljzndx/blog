@@ -104,6 +104,9 @@ async function setup() {
         label: '文章目录',
         level: 'deep'
       },
+      lastUpdated: {
+        text: '最后编辑于',
+      },
     },
     lastUpdated: true,
     transformPageData(pageData) {
