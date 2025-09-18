@@ -55,7 +55,7 @@ async function setup() {
         { text: '主页', link: '/' },
         { text: '微博', link: '/micro/' },
         { text: '技术', link: '/tech/' },
-        { text: '关于作者', items: [{ text: "简历", link: '/about/' }, { text: "自传", link: '/about/life/' }] },
+        { text: '关于作者', link: '/about/life/' },
       ],
 
       sidebar: {
