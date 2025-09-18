@@ -122,8 +122,8 @@ async function loadAsDateTree(dir: string, isYearDescending: boolean = false, is
 
         const members = ac.fileName.split('-');
 
-        const year = members[0];
-        const mouth = members[1];
+        const year = members[0] + '年';
+        const mouth = members[1] + '月';
 
         if (year != yearStr) {
             yearStr = year;
@@ -131,7 +131,7 @@ async function loadAsDateTree(dir: string, isYearDescending: boolean = false, is
 
             yearObj = {
                 text: year,
-                collapsed: true,
+                collapsed: false,
                 items: []
             }
 
@@ -146,7 +146,7 @@ async function loadAsDateTree(dir: string, isYearDescending: boolean = false, is
 
             mouthObj = {
                 text: mouth,
-                collapsed: true,
+                collapsed: false,
                 items: []
             }
 
