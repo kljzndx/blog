@@ -3,9 +3,9 @@
 layout: home
 
 hero:
-  name: "欢迎访问本博客"
-  text: "望您能不虚此行"
-  tagline: 乐在此心，方得安宁
+  name: "现实不是拍电影"
+  text: "没有那么多机缘巧合"
+  tagline: "但事情的发生却离不开巧合"
   actions:
     - theme: brand
       text: 简历
