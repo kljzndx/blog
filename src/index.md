@@ -8,11 +8,8 @@ hero:
   tagline: "但事情的发生却离不开巧合"
   actions:
     - theme: brand
-      text: 简历
-      link: /about/
-    - theme: alt
-      text: 邮箱
-      link: mailto:kljzndx@outlook.com
+      text: 联系信息 | 本站二维码
+      link: /contact.md
 ---
 
 <script setup lang="ts">
